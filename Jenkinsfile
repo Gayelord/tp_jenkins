@@ -16,4 +16,7 @@ node {
         print "Print groovy variable " + my_variable
         print "Print groovy variable  $my_variable"
     }
+    stage('print param'){
+        print "Parameter value " + params.param_string
+    }
 }
