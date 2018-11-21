@@ -29,8 +29,8 @@ node {
     '''
 
     // Pour rÃ©cupÃ©rer la valeur dans le script
-    def value = params.missing_param
-    def value_upper = params.missing_param.toUpperCase()
+    def value = params.param_string
+    def value_upper = params.param_string.toUpperCase()
 
     println "Print default => " + params.missing_param
     println "Print default => " + valuue
