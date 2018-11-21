@@ -1,3 +1,4 @@
+def my_variable="myvariable"
 
 node {
     stage('First'){
@@ -10,5 +11,9 @@ node {
     }
     stage('print variable'){
         print "build number: $BUILD_NUMBER"   
+    }
+    stage('Print groovy variable'){
+        print "Print groovy variable " + my_variable
+        print "Print groovy variable  $my_variable"
     }
 }
