@@ -29,12 +29,12 @@ node {
     '''
 
     // Pour rÃ©cupÃ©rer la valeur dans le script
-    def value = params.missing_param
-    def value_upper = params.missing_param.toUpperCase()
+    def value = params.param_string
+    def value_upper = params.param_string.toUpperCase()
 
-    println "Print default => " + params.missing_param
-    println "Print default => " + valuue
-    println "Print upper case value =>  + value_upper"
+    println "Print default => " + params.param_string
+    println "Print default => " + value
+    println "Print upper case value => " + value_upper
 
   }
 }
@@ -47,17 +47,18 @@ node {
   stage('3- RÃ©cupÃ©ration des crÃ©dentials'){
     withCredentials([
       usernamePassword(
-          credentialsId: 'missing_credential',
+          credentialsId: 'github_account',
           usernameVariable: "DEMO_USERNAME",
-          passwordVariable: "DEMO_PASS"
+          passwordVariable: "DEMO_TOKEN"
       ),
       file(
-        credentialsId: 'missing_secret_file',
+        credentialsId: 'demo_file',
         variable: 'SECRET_FILE')
     ]){
 
       // Affichage des variables :
- 
+      print "Username github " + DEMO_USERNAME
+      print "Token github "+ DEMO_TOKEN
     }
   } // end withCredential, les variables ne sont plus accessibles aprÃ¨s
 }
