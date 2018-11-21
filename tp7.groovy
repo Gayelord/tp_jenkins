@@ -1,6 +1,10 @@
 node {
 
   stage('Gestion erreur'){
+    
+    def affiche (string arg1) {
+      println $arg1
+    }
 
     println "Commande avant le try/catch"
     try {
@@ -9,16 +13,16 @@ node {
       def number = env.BUILD_NUMBER as Integer
 
       if (number%2) {
-        println "Number " + number +  " is impair"
+        affiche ("Number " + number +  " is impair")
         // levee une exception
         throw new Exception()
       }
       else { println "Number "+ number +" is PAIR" }
 
     } catch (Exception e) {
-        println "FAIL : la commande échoue, traiter ce cas"
+        affiche ("FAIL : la commande échoue, traiter ce cas")
     } finally {
-        println "Commande toujours exécutée"
+        affiche ("Commande toujours exécutée")
     }
   }
 
