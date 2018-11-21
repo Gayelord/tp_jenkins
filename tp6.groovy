@@ -32,7 +32,7 @@ node {
     def value = params.param_string
     def value_upper = params.param_string.toUpperCase()
 
-    println "Print default => " + params.missing_param
+    println "Print default => " + params.param_string
     println "Print default => " + valuue
     println "Print upper case value =>  + value_upper"
 
