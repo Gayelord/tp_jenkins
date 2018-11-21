@@ -51,9 +51,9 @@ node {
           usernameVariable: "DEMO_USERNAME",
           passwordVariable: "DEMO_PASS"
       ),
-      file(
-        credentialsId: 'missing_secret_file',
-        variable: 'SECRET_FILE')
+   //   file(
+   //     credentialsId: 'missing_secret_file',
+   //     variable: 'SECRET_FILE')
     ]){
 
       // Affichage des variables :
