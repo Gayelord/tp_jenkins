@@ -47,9 +47,9 @@ node {
   stage('3- RÃ©cupÃ©ration des crÃ©dentials'){
     withCredentials([
       usernamePassword(
-          credentialsId: 'missing_credential',
+          credentialsId: 'github_account',
           usernameVariable: "DEMO_USERNAME",
-          passwordVariable: "DEMO_PASS"
+          passwordVariable: "DEMO_TOKEN"
       ),
    //   file(
    //     credentialsId: 'missing_secret_file',
@@ -57,7 +57,8 @@ node {
     ]){
 
       // Affichage des variables :
- 
+      print "Username github " + DEMO_USERNAME
+      print "Token github "+ DEMO_TOKEN
     }
   } // end withCredential, les variables ne sont plus accessibles aprÃ¨s
 }
